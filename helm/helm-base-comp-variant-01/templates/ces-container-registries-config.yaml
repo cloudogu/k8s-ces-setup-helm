@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ces-container-registries
+  namespace: ecosystem
+  labels:
+    app: ces
+type: kubernetes.io/dockerconfigjson
+data:
+  .dockerconfigjson: {{ tpl (.Files.Get "files/ces-container-registries-tpl.json" ) . | b64enc }}

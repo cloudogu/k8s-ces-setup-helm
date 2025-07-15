@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ecosystem-certificate
+  namespace: ecosystem
+type: Opaque
+stringData:
+  tls.crt: {{ printf "%s\n" .Values.certificate.crt | toYaml | indent 2 }}
+  tls.key: {{ printf "%s\n" .Values.certificate.key | toYaml | indent 2 }}
+

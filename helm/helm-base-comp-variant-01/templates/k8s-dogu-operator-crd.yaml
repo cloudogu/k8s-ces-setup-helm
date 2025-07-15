@@ -1,0 +1,12 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: Component
+metadata:
+  name: k8s-dogu-operator-crd
+  namespace: ecosystem
+  labels:
+    app: ces
+    app.kubernetes.io/name: k8s-dogu-operator-crd
+spec:
+  name: k8s-dogu-operator-crd
+  namespace: k8s
+  version: 2.9.0

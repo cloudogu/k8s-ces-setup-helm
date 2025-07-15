@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: k8s-dogu-operator-dogu-registry
+  namespace: ecosystem
+  labels:
+    app: ces
+type: Opaque
+
+data:
+  endpoint: {{ .Values.doguregistry.endpoint | b64enc }}
+  urlschema: {{ .Values.doguregistry.url_schema | b64enc }}
+  username: {{ .Values.doguregistry.username | b64enc }}
+  password: {{ .Values.doguregistry.password | b64enc }}

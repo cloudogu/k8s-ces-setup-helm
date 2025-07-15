@@ -1,0 +1,12 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: Component
+metadata:
+  name: k8s-dogu-operator
+  namespace: ecosystem
+  labels:
+    app: ces
+    app.kubernetes.io/name: k8s-dogu-operator
+spec:
+  name: k8s-dogu-operator
+  namespace: k8s
+  version: 3.11.2
