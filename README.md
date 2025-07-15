@@ -1,4 +1,4 @@
-# k8s-ces-setup
+# k8s-ces-setup-helm
 
 Cloudogu EcoSystem Setup for Kubernetes
 
