@@ -1,0 +1,17 @@
+dependencies:
+  cas: 7.1.6-3
+  ldap: 2.6.8-4
+  k8s_nginx_ingress: 1.12.1-2
+  k8s_nginx_static: 1.26.3-2
+  postfix: 3.10.2-2
+
+cas:
+  config:
+    ldap:
+      ds_type: "embedded"
+      host: "ldap"
+      port: "389"
+
+postfix:
+  config:
+    relayhost: "mail.example.com"

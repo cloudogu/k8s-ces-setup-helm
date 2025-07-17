@@ -1,0 +1,9 @@
+apiVersion: k8s.cloudogu.com/v2
+kind: Dogu
+metadata:
+  name: postfix
+  labels:
+    app: ces
+spec:
+  name: official/postfix
+  version: {{ .Values.dependencies.postfix }}

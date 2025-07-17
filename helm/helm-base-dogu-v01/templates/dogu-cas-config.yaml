@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cas-config
+  namespace: ecosystem
+  labels:
+    app: ces
+    dogu.name: cas
+    k8s.cloudogu.com/type: dogu-config
+data:
+  config.yaml: |
+    ldap:
+      attribute_fullname: cn
+      attribute_given_name: ""
+      attribute_group: memberOf
+      attribute_id: uid
+      attribute_mail: mail
+      base_dn: ""
+      connection_dn: ""
+      ds_type: {{ .Values.cas.config.ldap.ds_type | quote }}
+      group_attribute_name: ""
+      group_base_dn: ""
+      group_search_filter: ""
+      host: {{ .Values.cas.config.ldap.host | quote }}
+      port: {{ .Values.cas.config.ldap.port | quote }}
+      search_filter: (objectClass=person)
+      server: ""
+    oidc:
+      allowed_groups: ""
+      attribute_mapping: email:mail,family_name:surname,given_name:givenName,preferred_username:username,name:displayName,groups:externalGroups
+      client_id: ""
+      discovery_uri: ""
+      display_name: CAS oidc provider
+      enabled: "false"
+      initial_admin_usernames: ""
+      optional: "false"
+      principal_attribute: preferred_username
+      scopes: openid email profile groups
+

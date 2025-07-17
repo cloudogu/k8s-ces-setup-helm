@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postfix-config
+  namespace: ecosystem
+  labels:
+    app: ces
+    dogu.name: postfix
+    k8s.cloudogu.com/type: dogu-config
+data:
+  config.yaml: |
+    relayhost: {{ .Values.postfix.config.relayhost | quote }}

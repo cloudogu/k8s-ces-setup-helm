@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ces-loadbalancer
+spec:
+  selector:
+    app: ces
+    dogu.name: "nginx-ingress"
+  ports:
+    - name: nginx-ingress-80
+      port: 80
+      protocol: TCP
+      targetPort: 80
+    - name: nginx-ingress-443
+      port: 443
+      protocol: TCP
+      targetPort: 443
+  type: LoadBalancer

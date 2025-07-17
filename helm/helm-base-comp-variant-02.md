@@ -62,9 +62,36 @@ kubectl create namespace ecosystem
 
 ## Credentials anlegen
 
+Wenn nötig, eine selbst signiertes Zertifikate anlegen.
+
 ```bash
 ./helm/scripts/self_signed_cert.sh k3s.local 192.168.56.2 target/cert.crt target/cert.key
 ```
+
+Script aufrufen, um Credentials im Cluster anzulegen.
+
+```bash
+./helm/scripts/setup_credentials.sh \
+   https://registry.cloudogu.com \
+   "$(gopass show  -o me/ces/harbor username)" \
+   "$(gopass show  -o me/ces/harbor)" \
+   mail.example.com \
+   target/cert.crt \
+   target/cert.key \
+   selfsigned \
+   https://dogu.cloudogu.com/api/v2/dogus \
+   https://dogu.cloudogu.com/api/v2/dogus_SCHEMA \
+   "$(gopass show  -o me/ces/harbor username)" \
+   "$(gopass show  -o me/ces/harbor)" \
+   k3s.local \
+   192.168.56.2 \
+   cesAdmin \
+   mail@example.com \
+   "" \
+   false \
+   ""
+```
+
 
 ## Helm Chart installieren
 
@@ -82,3 +109,4 @@ helm -n ecosystem install base-comp-variant02 ./helm/helm-base-comp-variant-02
 - [ ] Longhorn ist noch nicht dabei.
 - [ ] CertManager ist noch nicht dabei. Ist der notwendig?
 - [ ] Loki, Prometheus ist noch nicht dabei.
+- [ ] CRDs werden bei Deinstallation nicht entfernt

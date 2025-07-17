@@ -44,7 +44,7 @@ Login succeeded
    mail@example.com \
    "" \
    false \
-   "" \
+   "cas" \
    registry.cloudogu.com \
    1.10.0 \
    1.10.0
