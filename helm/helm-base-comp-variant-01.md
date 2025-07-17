@@ -20,19 +20,19 @@ Login succeeded
 3. Wenn nötig, ein selbst signiertes Zertifikate erstellen
 
 ```bash
-./self_signed_cert.sh k3s.local 192.168.56.2
+./helm/scripts/self_signed_cert.sh k3s.local 192.168.56.2 target/cert.crt target/cert.key
 ```
 
 4. Setup ausführen
 
 ```bash
-./setup.sh \
+./helm/scripts/setup_base_comp_variant-01.sh \
    https://registry.cloudogu.com \
    "$(gopass show  -o me/ces/harbor username)" \
    "$(gopass show  -o me/ces/harbor)" \
    mail.example.com \
-   ../target/cert.crt \
-   ../target/cert.key \
+   target/cert.crt \
+   target/cert.key \
    selfsigned \
    https://dogu.cloudogu.com/api/v2/dogus \
    https://dogu.cloudogu.com/api/v2/dogus_SCHEMA \
@@ -53,7 +53,7 @@ Login succeeded
 5. Helm-Chart installieren
 
 ```bash
-helm install -n ecosystem base-comp-01 ./helm-base-comp-variant-01/
+helm install -n ecosystem base-comp-01 ./helm/helm-base-comp-variant-01/
 ```
 
 

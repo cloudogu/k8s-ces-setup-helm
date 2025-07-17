@@ -1,0 +1,6 @@
+apiVersion: v2
+appVersion: 1.4.6
+description: A Helm chart for the Backup-CRDs
+name: k8s-backup-operator-crd
+type: application
+version: 1.4.6

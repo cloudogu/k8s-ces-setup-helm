@@ -1,0 +1,6 @@
+apiVersion: v2
+appVersion: 2.9.0
+description: A Helm chart for the Dogu-CRD
+name: k8s-dogu-operator-crd
+type: application
+version: 2.9.0

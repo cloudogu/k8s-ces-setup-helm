@@ -1,0 +1,21 @@
+dependencies:
+- name: k8s-backup-operator
+  repository: oci://registry.cloudogu.com/k8s
+  version: 1.4.6
+- name: k8s-dogu-operator
+  repository: oci://registry.cloudogu.com/k8s
+  version: 3.11.2
+- name: k8s-service-discovery
+  repository: oci://registry.cloudogu.com/k8s
+  version: 2.0.0
+- name: k8s-snapshot-controller
+  repository: oci://registry.cloudogu.com/k8s
+  version: 8.2.1-2
+- name: k8s-velero
+  repository: oci://registry.cloudogu.com/k8s
+  version: 10.0.1-2
+- name: k8s-blueprint-operator
+  repository: oci://registry.cloudogu.com/k8s
+  version: 2.6.0
+digest: sha256:432fb6bea322cef9af42d530efde18efc10a66c01d67255503a9121ddecdede4
+generated: "2025-07-17T10:19:48.078682043+02:00"

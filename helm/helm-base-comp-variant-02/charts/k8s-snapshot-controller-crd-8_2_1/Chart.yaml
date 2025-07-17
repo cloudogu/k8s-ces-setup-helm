@@ -1,0 +1,7 @@
+apiVersion: v2
+appVersion: 8.2.1-2
+description: The snapshot-controller is a cluster-wide component responsible for creating
+  and deleting a snapshot in the storage system through a CSI volume driver.
+name: k8s-snapshot-controller-crd
+type: application
+version: 8.2.1-2
